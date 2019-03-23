@@ -3,14 +3,14 @@ import './App.css';
 import {MuiThemeProvider} from '@material-ui/core';
 import CssBaseline from '@material-ui/core/es/CssBaseline/CssBaseline';
 import {getThemeFromName} from './themes';
-import {Route, Router, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import NotFound from './pages/not-found';
 import Index from './pages/index';
 
 const App = () => (
   <MuiThemeProvider theme={getThemeFromName('default')}>
     <CssBaseline>
-      <Router>
+      <BrowserRouter>
         <Switch>
           <Route
             component={Index}
@@ -21,7 +21,7 @@ const App = () => (
             component={NotFound}
           />
         </Switch>
-      </Router>
+      </BrowserRouter>
     </CssBaseline>
   </MuiThemeProvider>
 );
